@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Modelo de prediccion de valores</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo-pill">🧠 TensorFlow.js</div>
+        <div class="formula-pill">y = 2x + 6</div>
+        <p class="subtitle">Regresión lineal secuencial</p>
+      </div>
+
+      <!-- Card entrenamiento -->
+      <div class="card">
+        <h3 class="card-title">📊 Entrenar Modelo</h3>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="status-text" id="status-text">Modelo listo para entrenar</p>
+        <button class="btn btn-train" id="train-btn">
+          ▶ Empezar Entrenamiento
+        </button>
+      </div>
+
+      <!-- Card predicción -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">🔍 Predecir valor</h3>
+          <span class="badge badge-idle" id="model-badge">Esperando...</span>
+        </div>
+        <input
+          class="tf-input"
+          type="number"
+          id="x-input"
+          placeholder="Ingresá el valor de X"
+          disabled
+        />
+        <button class="btn btn-predict" id="predict-btn" disabled>
+          Predecir
+        </button>
+        <div class="result-box">
+          <p class="result-label">RESULTADO DE LA PREDICCIÓN</p>
+          <p class="result-value" id="result-value">— — —</p>
+          <p class="result-hint" id="result-hint">y = peso × x + sesgo</p>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
